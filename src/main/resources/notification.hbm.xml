@@ -1,0 +1,40 @@
+<hibernate-mapping>
+
+    <class name="com.lifewithgoal.entity.Notification" table="notifications">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity" />
+        </id>
+        <property name="to" type="java.lang.String">
+            <column name="to" length="255" not-null="true"/>
+        </property>
+        <property name="subject" type="java.lang.String">
+            <column name="subject" length="20" not-null="true"/>
+        </property>
+        <property name="message" type="java.lang.String">
+            <column name="message" length="255" not-null="true"/>
+        </property>
+        <property name="template_name" type="java.lang.String">
+            <column name="template_name" length="255"/>
+        </property>
+        <property name="message_type" type="java.lang.Integer">
+            <column name="message_type"/>
+        </property>
+        <property name="delivery_state" type="java.lang.Integer">
+            <column name="delivery_state"/>
+        </property>
+        <property name="fail_attempts" type="java.lang.Integer">
+            <column name="fail_attempts"/>
+        </property>
+        <property name="message_time" type="java.util.Date">
+            <column name="message_time"/>
+        </property>
+        <property name="delivery_completed_time" type="java.util.Date">
+            <column name="delivery_completed_time"/>
+        </property>
+    </class>
+
+
+
+
+</hibernate-mapping>
