@@ -26,11 +26,13 @@
     <Loggers>
         <Logger name="root" level="info" additivity="false">
             <appender-ref ref="RollingFile" level="info"/>
-            <appender-ref ref="Console" level="debug"/>
+            <appender-ref ref="Console" level="info"/>
         </Logger>
+        <!--
         <Root level="debug" additivity="false">
             <AppenderRef ref="RollingFile"/>
             <appender-ref ref="Console" level="debug"/>
         </Root>
+        -->
     </Loggers>
 </Configuration>

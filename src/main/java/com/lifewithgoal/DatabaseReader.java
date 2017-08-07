@@ -29,8 +29,11 @@ public class DatabaseReader implements Runnable{
             if(notifications != null && !notifications.isEmpty()){
                 logger.info("Sending " + notifications.size() + " new messages.");
                 for(Notification notification : notifications){
-                    boolean state = EmailSender.sendEmail(new Email(notification.getTo(),notification.getSubject(),
+                    long st = System.currentTimeMillis();
+                    boolean state = EmailSender.sendEmail(new Email(notification.getTo(), notification.getSubject(),
                             notification.getMessage()));
+                    long end = System.currentTimeMillis();
+                    logger.info("Email delevary time " + (end - st) + " ms.");
                     if(state){
                         updateState(notification,2);
                     }else {
